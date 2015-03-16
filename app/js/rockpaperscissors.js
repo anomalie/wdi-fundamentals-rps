@@ -22,21 +22,25 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 function getPlayerMove(move) {
-    // Write an expression that operates on a variable called `move`
-    // If a `move` has a value, your expression should evaluate to that value.
-    // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return /* Your Expression */;
+     move ? move : getInput() 
 }
 
 function getComputerMove(move) {
-    // Write an expression that operates on a variable called `move`
-    // If a `move` has a value, your expression should evaluate to that value.
-    // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return /* Your Expression */;
+ move ? move : randomPlay()
 }
 
-function getWinner(playerMove,computerMove) {
-    var winner;
+function getWinner(playerMove, computerMove) {
+    if (playerMove === computerMove) {return "tie"}
+        if (playerMove === "rock" && computerMove === "paper") {return "computer"}
+        if (playerMove === "paper" && computerMove === "rock") {return "player"}
+        if (playerMove === "scissors" && computerMove === " paper") {return "player"}
+        if (playerMove === "paper" && computerMove === "scissors") {return "computer"}
+        if (playerMove === "rock" && computerMove === " scissors") {return "player"}
+        if (playerMove === "scissors" && computerMove === "rock") {return "computer"} ;
+
+
+
+
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
@@ -48,8 +52,11 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+  console.log("Player chose " + playerMove + " while Computer chose " + computerMove);
+
+while (playerwins < 5 && computerwins < 5) 
+
+
+    return {playerWins, computerWins};
 }
 
